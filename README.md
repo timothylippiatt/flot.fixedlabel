@@ -5,8 +5,8 @@ A simple <a href="http://www.flotcharts.org/">flot</a> plugin to show text at a 
 
     fixedLabel: {
       value: string,
-	  font: string, // e.g. "10px sans-serif"
-	  color: string, // e.g. "black"
+	  font: string, // "10px sans-serif"
+	  color: string, // "black"
 	  x: int, // 0
 	  y: int, // 10
     }
