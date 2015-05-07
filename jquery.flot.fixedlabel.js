@@ -25,6 +25,7 @@ THE SOFTWARE.
 /*
 jquery.flot.fixedlabel.js
 -------------------------
+A simple flot plugin to display a label at a fixed position within the flot chart.
 */
 
 (function ($) {
@@ -37,15 +38,24 @@ jquery.flot.fixedlabel.js
                 var fixedLabelOptions = plot.getOptions().fixedLabel;
 
                 if (fixedLabelOptions != null &&
-                    fixedLabelOptions.text != null &&
-                    fixedLabelOptions.text.length > 0) {
+                    fixedLabelOptions.value != null &&
+                    fixedLabelOptions.value.length > 0) {
 
                     // X value start point is on the left edge of the graph canvas
                     var x = series.yaxis.box.left + series.yaxis.box.width + fixedLabelOptions.x;
 
                     ctx.save();
-                    if (fixedLabelOptions.font != null) ctx.font = fixedLabelOptions.font;
-                    ctx.fillText(fixedLabelOptions.text, x, fixedLabelOptions.y);
+
+                    if (fixedLabelOptions.font) {
+                        ctx.font = fixedLabelOptions.font;
+                    }
+
+                    if (fixedLabelOptions.color) {
+                        ctx.fillStyle = fixedLabelOptions.color;
+                    }
+
+                    ctx.fillText(fixedLabelOptions.value, x, fixedLabelOptions.y);
+
                     ctx.restore();
                 }
             });
@@ -53,8 +63,9 @@ jquery.flot.fixedlabel.js
 
     var options = {
         fixedLabel: {
-            text: null,
-            font: null,
+            value: null,
+            font: "10px sans-serif",
+            color: "black",
             x: 0,
             y: 10 // Default so that text can be seen and is not above the canvas
         }
@@ -65,7 +76,7 @@ jquery.flot.fixedlabel.js
             init: init,
             options: options,
             name: "fixedLabel",
-            version: "0.1"
+            version: "0.2"
         }
     );
 
