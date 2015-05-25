@@ -25,7 +25,7 @@ THE SOFTWARE.
 /*
 jquery.flot.fixedlabel.js
 -------------------------
-A simple flot plugin to display a label at a fixed position within the flot chart.
+A simple flot plugin to show text at a fixed position on the chart.
 */
 
 (function ($) {
