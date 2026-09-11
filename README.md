@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repo has been archived and will not be maintained going forward.
+
 # flot.fixedlabel 0.2
 A simple <a href="http://www.flotcharts.org/">flot</a> plugin to show text at a fixed position on the chart.
 
